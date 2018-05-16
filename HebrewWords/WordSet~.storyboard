@@ -230,7 +230,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="idU-3r-LMW" kind="show" id="IBt-A8-9zk"/>
+                                            <segue destination="2gE-Fj-UjM" kind="show" id="IBt-A8-9zk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -256,6 +256,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDV-CZ-lsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3227" y="121"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="gz5-Vq-Tkd">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="2gE-Fj-UjM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wzk-Jk-rTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4064" y="129"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LNg-jd-gqW">
+            <objects>
+                <viewController id="TaC-s7-ewW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wyb-7K-KSI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Q9A-VR-VMl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qAx-iP-gnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4982" y="138"/>
         </scene>
         <!--Expressions View Controller-->
         <scene sceneID="9zf-3b-5T0">
@@ -304,14 +327,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0my-pj-T8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="232.80000000000001" y="792.95352323838085"/>
-        </scene>
-        <!--WordSet-->
-        <scene sceneID="C0K-6p-xAZ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="WordSet" id="idU-3r-LMW" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gE4-NX-UC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4064" y="129"/>
         </scene>
     </scenes>
 </document>

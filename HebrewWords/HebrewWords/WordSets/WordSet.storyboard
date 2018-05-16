@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2gE-Fj-UjM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Words Page View Controller-->
+        <scene sceneID="gz5-Vq-Tkd">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="2gE-Fj-UjM" customClass="WordsPageViewController" customModule="HebrewWords" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wzk-Jk-rTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4064" y="129"/>
+        </scene>
+        <!--Word Set1 View Controller-->
+        <scene sceneID="ZEb-DB-8MQ">
+            <objects>
+                <viewController storyboardIdentifier="Words1" id="l7a-bb-1af" customClass="WordSet1ViewController" customModule="HebrewWords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="Words1" id="BsP-AR-vKC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XX2-1p-l8R">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Word1Cell" id="Pcn-az-Wei" customClass="WordSetTableViewCell" customModule="HebrewWords">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pcn-az-Wei" id="ICD-wR-1xC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="l7a-bb-1af" id="y3G-2D-ui6"/>
+                                    <outlet property="delegate" destination="l7a-bb-1af" id="kZo-mE-Bfq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XX2-1p-l8R" firstAttribute="top" secondItem="Rzi-ng-R69" secondAttribute="top" id="7Pm-MP-UQy"/>
+                            <constraint firstItem="XX2-1p-l8R" firstAttribute="leading" secondItem="Rzi-ng-R69" secondAttribute="leading" id="GZg-CD-bjT"/>
+                            <constraint firstItem="Rzi-ng-R69" firstAttribute="trailing" secondItem="XX2-1p-l8R" secondAttribute="trailing" id="MI9-JL-XPx"/>
+                            <constraint firstItem="Rzi-ng-R69" firstAttribute="bottom" secondItem="XX2-1p-l8R" secondAttribute="bottom" id="lMd-6T-zNH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rzi-ng-R69"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="XX2-1p-l8R" id="KLR-wk-BRu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mqh-cT-Pgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4976" y="126"/>
+        </scene>
+        <!--Word Set3 View Controller-->
+        <scene sceneID="U0W-yS-FQe">
+            <objects>
+                <viewController storyboardIdentifier="Words3" id="z3p-Ic-qtL" customClass="WordSet3ViewController" customModule="HebrewWords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LMC-rk-Jkl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ZGF-3I-O8f"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCY-gA-w9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4063" y="814"/>
+        </scene>
+        <!--Word Set2 View Controller-->
+        <scene sceneID="pwN-Ta-8b3">
+            <objects>
+                <viewController storyboardIdentifier="Words2" id="zFM-km-rym" customClass="WordSet2ViewController" customModule="HebrewWords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6dg-wN-Sxz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tUq-a0-aKF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxf-Xf-3OJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4980" y="814"/>
+        </scene>
+    </scenes>
+</document>
