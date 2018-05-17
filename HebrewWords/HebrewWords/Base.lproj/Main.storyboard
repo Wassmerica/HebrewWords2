@@ -141,7 +141,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="wordSetsAction:" destination="vQ3-kL-sif" eventType="touchUpInside" id="Ay7-Lj-izX"/>
-                                            <segue destination="T60-hc-nLg" kind="show" id="2mA-Br-iWD"/>
+                                            <segue destination="T60-hc-nLg" kind="show" identifier="" id="2mA-Br-iWD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xm-JN-3L4">
@@ -230,7 +230,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="idU-3r-LMW" kind="show" id="IBt-A8-9zk"/>
+                                            <segue destination="idU-3r-LMW" kind="show" identifier="ShowWordSetSegue" id="IBt-A8-9zk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -255,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDV-CZ-lsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3227" y="121"/>
+            <point key="canvasLocation" x="3222" y="-43"/>
         </scene>
         <!--Expressions View Controller-->
         <scene sceneID="9zf-3b-5T0">

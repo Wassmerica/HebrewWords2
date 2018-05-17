@@ -69,9 +69,38 @@
                     <view key="view" contentMode="scaleToFill" id="LMC-rk-Jkl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rae-1N-IeT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fre-Ba-wgh" customClass="WordSetTableViewCell" customModule="HebrewWords" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fre-Ba-wgh" id="4a1-YH-vaG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="z3p-Ic-qtL" id="xT8-0E-bjo"/>
+                                    <outlet property="delegate" destination="z3p-Ic-qtL" id="hJs-ye-2cg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rae-1N-IeT" firstAttribute="top" secondItem="ZGF-3I-O8f" secondAttribute="top" id="Dv8-vC-Pfp"/>
+                            <constraint firstItem="ZGF-3I-O8f" firstAttribute="trailing" secondItem="rae-1N-IeT" secondAttribute="trailing" id="LQP-zG-PJU"/>
+                            <constraint firstItem="ZGF-3I-O8f" firstAttribute="bottom" secondItem="rae-1N-IeT" secondAttribute="bottom" id="OLo-ff-hoV"/>
+                            <constraint firstItem="rae-1N-IeT" firstAttribute="leading" secondItem="ZGF-3I-O8f" secondAttribute="leading" id="aeS-mN-JKC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZGF-3I-O8f"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="rae-1N-IeT" id="Rr6-ig-Qug"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCY-gA-w9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,9 +113,38 @@
                     <view key="view" contentMode="scaleToFill" id="6dg-wN-Sxz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bwt-X3-Di8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ImW-U9-uT9" customClass="WordSetTableViewCell" customModule="HebrewWords" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ImW-U9-uT9" id="xM6-C7-RlD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zFM-km-rym" id="SjA-Jm-lPf"/>
+                                    <outlet property="delegate" destination="zFM-km-rym" id="Hsd-2Q-pGX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tUq-a0-aKF" firstAttribute="bottom" secondItem="Bwt-X3-Di8" secondAttribute="bottom" id="133-Bi-xuL"/>
+                            <constraint firstItem="Bwt-X3-Di8" firstAttribute="top" secondItem="tUq-a0-aKF" secondAttribute="top" id="264-6y-zO8"/>
+                            <constraint firstItem="tUq-a0-aKF" firstAttribute="trailing" secondItem="Bwt-X3-Di8" secondAttribute="trailing" id="9F0-IJ-QOt"/>
+                            <constraint firstItem="Bwt-X3-Di8" firstAttribute="leading" secondItem="tUq-a0-aKF" secondAttribute="leading" id="HfV-kM-sq9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tUq-a0-aKF"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Bwt-X3-Di8" id="blx-jW-QT6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxf-Xf-3OJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

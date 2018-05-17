@@ -13,9 +13,9 @@ class WordsPageViewController: UIPageViewController, UIPageViewControllerDelegat
     var wordsSet: [Word]?
     var pageControl = UIPageControl()
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newVc(viewController: "Words1"),
-                self.newVc(viewController: "Words2"),
-                self.newVc(viewController: "Words3")]
+        return [self.nextViewController(viewController: "Words1", index: 1),
+                self.nextViewController(viewController: "Words2", index: 2),
+                self.nextViewController(viewController: "Words3", index: 3)]
     }()
     
     //MARK: - UIPageViewControllerDataSource Methods
@@ -26,11 +26,10 @@ class WordsPageViewController: UIPageViewController, UIPageViewControllerDelegat
         
         let previousIndex = viewControllerIndex - 1
         
-        // User is on the first view controller and swiped left to loop to
-        // the last view controller.
+        // User is on the first view controller and swiped left to loop to the last view controller.
         guard previousIndex >= 0 else {
             return orderedViewControllers.last
-            // Uncommment the line below, remove the line above if you don't want the page control to loop.
+            // return nil so pages won't loop
             // return nil
         }
         
@@ -49,11 +48,10 @@ class WordsPageViewController: UIPageViewController, UIPageViewControllerDelegat
         let nextIndex = viewControllerIndex + 1
         let orderedViewControllersCount = orderedViewControllers.count
         
-        // User is on the last view controller and swiped right to loop to
-        // the first view controller.
+        // User is on the last view controller and swiped right to loop to the first view controller.
         guard orderedViewControllersCount != nextIndex else {
             return orderedViewControllers.first
-            // Uncommment the line below, remove the line above if you don't want the page control to loop.
+            // return nil so pages won't loop
             // return nil
         }
         
@@ -67,7 +65,7 @@ class WordsPageViewController: UIPageViewController, UIPageViewControllerDelegat
     //MARK: - UIPageViewControllerDelegate Methods
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
-        self.pageControl.currentPage = orderedViewControllers.index(of: pageContentViewController)!
+        self.pageControl.currentPage  = orderedViewControllers.index(of: pageContentViewController)!
     }
     
     //MARK: - Lifecycle Methods
@@ -93,13 +91,38 @@ class WordsPageViewController: UIPageViewController, UIPageViewControllerDelegat
     }
     
     //MARK: - Helper Methods
-    
-    func newVc(viewController: String) -> UIViewController {
+    func nextViewController(viewController: String, index: Int) -> UIViewController {
+        switch index {
+        case 1:
+            if let newVC = UIStoryboard(name: "WordSet", bundle: nil).instantiateViewController(withIdentifier: viewController) as? WordSet1ViewController {
+                if let arrSlice = wordsSet?[0...5] {
+                    newVC.wordSet = Array(arrSlice)
+                }
+                return newVC
+            }
+        case 2:
+            if let newVC = UIStoryboard(name: "WordSet", bundle: nil).instantiateViewController(withIdentifier: viewController) as? WordSet2ViewController {
+                if let arrSlice = wordsSet?[6...11] {
+                    newVC.wordSet = Array(arrSlice)
+                }
+                return newVC
+            }
+        case 3:
+            if let newVC = UIStoryboard(name: "WordSet", bundle: nil).instantiateViewController(withIdentifier: viewController) as? WordSet3ViewController {
+                if let arrSlice = wordsSet?[12...17] {
+                    newVC.wordSet = Array(arrSlice)
+                }
+                return newVC
+            }
+        
+        default:
+            return (UIStoryboard(name: "WordSet", bundle: nil).instantiateViewController(withIdentifier: viewController) as? WordSet1ViewController)!
+        }
+        
         return UIStoryboard(name: "WordSet", bundle: nil).instantiateViewController(withIdentifier: viewController)
     }
     
     func configurePageControl() {
-        // The total number of pages that are available is based on how many available colors we have.
         pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
         self.pageControl.numberOfPages                 = orderedViewControllers.count
         self.pageControl.currentPage                   = 0

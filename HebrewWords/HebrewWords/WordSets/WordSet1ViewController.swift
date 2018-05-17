@@ -11,7 +11,9 @@ import UIKit
 class WordSet1ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    var wordSet: [Word]?
     
+    //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +26,6 @@ class WordSet1ViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     //MARK: UITableViewDataSource Methods
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -35,7 +36,7 @@ class WordSet1ViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "WordSetTableViewCell", for: indexPath) as? WordSetTableViewCell {
-            cell.theWord.text = "booger"
+            cell.theWord.text = wordSet?[indexPath.row].hebrew
             return cell
         }
         return UITableViewCell()
