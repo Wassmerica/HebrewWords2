@@ -27,6 +27,7 @@
 		95D39C9820A5D17D003B3346 /* HebrewWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D39C9720A5D17D003B3346 /* HebrewWordsTests.swift */; };
 		95EC248720ACBD1900F0AD66 /* WordSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EC248520ACBD1900F0AD66 /* WordSetTableViewCell.swift */; };
 		95EC248820ACBD1900F0AD66 /* WordSetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EC248620ACBD1900F0AD66 /* WordSetTableViewCell.xib */; };
+		95EC248A20ADE92F00F0AD66 /* MarkedWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EC248920ADE92F00F0AD66 /* MarkedWordsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		95D39C9920A5D17D003B3346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EC248520ACBD1900F0AD66 /* WordSetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetTableViewCell.swift; sourceTree = "<group>"; };
 		95EC248620ACBD1900F0AD66 /* WordSetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordSetTableViewCell.xib; sourceTree = "<group>"; };
+		95EC248920ADE92F00F0AD66 /* MarkedWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkedWordsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				95935C6420A5EA33004728A7 /* WordsViewController.swift */,
 				95935C8420A70658004728A7 /* VerbsViewController.swift */,
 				95935C8620A70664004728A7 /* ExpressionsViewController.swift */,
+				95EC248920ADE92F00F0AD66 /* MarkedWordsViewController.swift */,
 				95D39C8620A5D17C003B3346 /* Main.storyboard */,
 				95D39C8920A5D17D003B3346 /* Assets.xcassets */,
 				95D39C8B20A5D17D003B3346 /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 				956AA3A920AC7AFC006E7FAE /* WordRepository.swift in Sources */,
 				956AA3B420ACBAC0006E7FAE /* WordSet3ViewController.swift in Sources */,
 				956AA3B220ACBAB7006E7FAE /* WordSet2ViewController.swift in Sources */,
+				95EC248A20ADE92F00F0AD66 /* MarkedWordsViewController.swift in Sources */,
 				95D39C8520A5D17C003B3346 /* ViewController.swift in Sources */,
 				95D39C8320A5D17C003B3346 /* AppDelegate.swift in Sources */,
 				956AA3B020ACBAAA006E7FAE /* WordSet1ViewController.swift in Sources */,

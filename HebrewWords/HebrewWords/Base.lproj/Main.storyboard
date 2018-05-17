@@ -140,7 +140,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="wordSetsAction:" destination="vQ3-kL-sif" eventType="touchUpInside" id="Ay7-Lj-izX"/>
                                             <segue destination="T60-hc-nLg" kind="show" identifier="" id="2mA-Br-iWD"/>
                                         </connections>
                                     </button>
@@ -150,7 +149,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="Qn0-uS-6kw"/>
                                         </constraints>
-                                        <state key="normal" title="Random Words">
+                                        <state key="normal" title="Marked Words">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -159,7 +158,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="randomWordsAction:" destination="vQ3-kL-sif" eventType="touchUpInside" id="NUu-v7-oCp"/>
+                                            <segue destination="vZR-jF-aI9" kind="show" identifier="showMarkedWords" id="MsI-V5-31z"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjM-a1-QcI">
@@ -168,7 +167,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="mRm-JW-LSt"/>
                                         </constraints>
-                                        <state key="normal" title="Quiz">
+                                        <state key="normal" title="Related Words">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -176,9 +175,6 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="quizAction:" destination="vQ3-kL-sif" eventType="touchUpInside" id="awj-Pc-wzZ"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -286,6 +282,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sji-Sg-iNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2290" y="861"/>
+        </scene>
+        <!--Marked Words-->
+        <scene sceneID="OgE-qc-5JH">
+            <objects>
+                <viewController title="Marked Words" id="vZR-jF-aI9" customClass="MarkedWordsViewController" customModule="HebrewWords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bpq-qv-TeM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bRd-H8-KP2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WordSetTableViewCell" id="e8Q-Ue-gFj">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e8Q-Ue-gFj" id="tFf-6q-HfT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vZR-jF-aI9" id="M7N-hu-uU7"/>
+                                    <outlet property="delegate" destination="vZR-jF-aI9" id="BsY-9L-eSS"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="omE-yA-Ng1" firstAttribute="bottom" secondItem="bRd-H8-KP2" secondAttribute="bottom" id="9ES-vK-UnA"/>
+                            <constraint firstItem="bRd-H8-KP2" firstAttribute="leading" secondItem="omE-yA-Ng1" secondAttribute="leading" id="AP8-LT-cNP"/>
+                            <constraint firstItem="bRd-H8-KP2" firstAttribute="top" secondItem="omE-yA-Ng1" secondAttribute="top" id="Ovf-YE-cNY"/>
+                            <constraint firstItem="omE-yA-Ng1" firstAttribute="trailing" secondItem="bRd-H8-KP2" secondAttribute="trailing" id="a2r-6u-WeL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="omE-yA-Ng1"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="bRd-H8-KP2" id="KgK-SL-Nxs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5D3-sb-7z0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3615" y="884"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tgL-dg-GyA">

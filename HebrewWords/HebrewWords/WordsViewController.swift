@@ -15,23 +15,10 @@ class WordsViewController: UIViewController {
         self.title = "Words"
     }
     
-    //MARK - IBAction methods
-    @IBAction func wordSetsAction(_ sender: UIButton) {
-        print("word sets")
-    }
-    
-    @IBAction func randomWordsAction(_ sender: UIButton) {
-    }
-    
-    @IBAction func quizAction(_ sender: UIButton) {
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
     
     // MARK: - Navigation
 
