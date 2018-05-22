@@ -12,11 +12,11 @@ class WordSet1ViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var tableView: UITableView!
     var wordSet: [Word]?
+    var wordState = [0, 0, 0, 0, 0, 0]
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.register(UINib(nibName: "WordSetTableViewCell", bundle: nil), forCellReuseIdentifier: "WordSetTableViewCell")
     }
 
@@ -36,7 +36,11 @@ class WordSet1ViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "WordSetTableViewCell", for: indexPath) as? WordSetTableViewCell {
-            cell.theWord.text = wordSet?[indexPath.row].hebrew
+            if wordState[indexPath.row] == 0 {
+                cell.theWord.text = wordSet?[indexPath.row].hebrew
+            } else {
+                cell.theWord.text = wordSet?[indexPath.row].english
+            }
             return cell
         }
         return UITableViewCell()
@@ -45,15 +49,48 @@ class WordSet1ViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as? WordSetTableViewCell
+        if wordSet?[indexPath.row].hebrew == cell?.theWord.text {
+            //flip to english
+            wordState[indexPath.row] = 1
+        } else {
+            //flip to hebrew
+            wordState[indexPath.row] = 0
+        }
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
-    */
+    
+    //MARK: - Helper Methods
+    
+    func flipAll() {
+        var counts: [String: Int] = [:]
+        for item in wordState {
+            counts[String(item)] = (counts[String(item)] ?? 0) + 1
+        }
+        
+        if counts.count == 1 {
+            //all words are in one state - if 0 all are Hebrew - if 1 all are English
+            if counts["0"] != nil {
+                //flip to english
+                wordState = wordState.map { _ in 1 }
+            } else {
+                //flip to hebrew
+                wordState = wordState.map { _ in 0 }
+            }
 
+        } else {
+            if let hebCount = counts["0"], let engCount = counts["1"] {
+                if hebCount >= engCount {
+                    //make all english
+                    wordState = wordState.map { _ in 0 }
+                } else {
+                    wordState = wordState.map { _ in 1 }
+                }
+            }
+        }
+        
+        tableView.reloadData()
+    }
 }

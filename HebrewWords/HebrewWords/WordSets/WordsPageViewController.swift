@@ -14,8 +14,8 @@ class WordsPageViewController: UIPageViewController, UIPageViewControllerDelegat
     var pageControl = UIPageControl()
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.nextViewController(viewController: "Words1", index: 1),
-                self.nextViewController(viewController: "Words2", index: 2),
-                self.nextViewController(viewController: "Words3", index: 3)]
+                self.nextViewController(viewController: "Words1", index: 2),
+                self.nextViewController(viewController: "Words1", index: 3)]
     }()
     
     //MARK: - UIPageViewControllerDataSource Methods
@@ -83,6 +83,7 @@ class WordsPageViewController: UIPageViewController, UIPageViewControllerDelegat
         }
         self.delegate = self
         configurePageControl()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Flip All", style: .plain, target: self, action: #selector(flipAll))
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,14 +102,14 @@ class WordsPageViewController: UIPageViewController, UIPageViewControllerDelegat
                 return newVC
             }
         case 2:
-            if let newVC = UIStoryboard(name: "WordSet", bundle: nil).instantiateViewController(withIdentifier: viewController) as? WordSet2ViewController {
+            if let newVC = UIStoryboard(name: "WordSet", bundle: nil).instantiateViewController(withIdentifier: viewController) as? WordSet1ViewController {
                 if let arrSlice = wordsSet?[6...11] {
                     newVC.wordSet = Array(arrSlice)
                 }
                 return newVC
             }
         case 3:
-            if let newVC = UIStoryboard(name: "WordSet", bundle: nil).instantiateViewController(withIdentifier: viewController) as? WordSet3ViewController {
+            if let newVC = UIStoryboard(name: "WordSet", bundle: nil).instantiateViewController(withIdentifier: viewController) as? WordSet1ViewController {
                 if let arrSlice = wordsSet?[12...17] {
                     newVC.wordSet = Array(arrSlice)
                 }
@@ -132,14 +133,9 @@ class WordsPageViewController: UIPageViewController, UIPageViewControllerDelegat
         self.view.addSubview(pageControl)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc func flipAll() {
+        let currentVC = orderedViewControllers[self.pageControl.currentPage] as? WordSet1ViewController
+        currentVC?.flipAll()
     }
-    */
 
 }
